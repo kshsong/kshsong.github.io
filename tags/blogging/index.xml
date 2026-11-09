@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogging | Kaisheng Song</title><link>https://kshsong.github.io/tags/blogging/</link><atom:link href="https://kshsong.github.io/tags/blogging/index.xml" rel="self" type="application/rss+xml"/><description>Blogging</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-US</language><lastBuildDate>Tue, 23 Dec 2025 14:00:00 +0800</lastBuildDate><image><url>https://kshsong.github.io/media/icon_hu_645fa481986063ef.png</url><title>Blogging</title><link>https://kshsong.github.io/tags/blogging/</link></image><item><title>How to Build a Personal Blog with Hugo</title><link>https://kshsong.github.io/post/2025/hugo-blog-setup/</link><pubDate>Tue, 23 Dec 2025 14:00:00 +0800</pubDate><guid>https://kshsong.github.io/post/2025/hugo-blog-setup/</guid><description>&lt;h1 id="how-to-build-a-personal-blog-with-hugo">How to Build a Personal Blog with Hugo&lt;/h1>
+&lt;p>This tutorial walks through building a modern personal blog with the Hugo framework.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before you start, make sure you have installed:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;/li>
+&lt;li>
+(version 0.115.0 or newer)&lt;/li>
+&lt;/ul>
+&lt;h2 id="step-1-create-a-hugo-site">Step 1: Create a Hugo site&lt;/h2>
+&lt;p>First, create a new Hugo site:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new site my-blog
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> my-blog
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-initialize-the-git-repository">Step 2: Initialize the Git repository&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git init
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;Initial commit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-add-the-theme">Step 3: Add the theme&lt;/h2>
+&lt;p>This blog uses the Academic CV theme from Hugo Blox Builder:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Add the theme module&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo mod init github.com/username/my-blog
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then configure &lt;code>config/_default/module.yaml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">imports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github.com/HugoBlox/hugo-blox-builder/starters/academic-cv&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-configure-the-site">Step 4: Configure the site&lt;/h2>
+&lt;p>Edit &lt;code>config/_default/hugo.yaml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">baseURL&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;https://yourusername.github.io&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">languageCode&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;en-us&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;Your Blog Name&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-5-create-content">Step 5: Create content&lt;/h2>
+&lt;p>Create your first post:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new post/my-first-post.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-6-preview-locally">Step 6: Preview locally&lt;/h2>
+&lt;p>Start the local server:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then visit &lt;code>http://localhost:1313&lt;/code> to see the result.&lt;/p>
+&lt;h2 id="step-7-deploy-to-github-pages">Step 7: Deploy to GitHub Pages&lt;/h2>
+&lt;ol>
+&lt;li>Create a &lt;code>username.github.io&lt;/code> repository on GitHub&lt;/li>
+&lt;li>Configure a GitHub Actions workflow&lt;/li>
+&lt;li>Push the code for automatic deployment&lt;/li>
+&lt;/ol>
+&lt;h2 id="advanced-configuration">Advanced configuration&lt;/h2>
+&lt;h3 id="enable-chinese-language-support">Enable Chinese language support&lt;/h3>
+&lt;p>Add the following to &lt;code>config/_default/hugo.yaml&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">hasCJKLanguage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="custom-styles">Custom styles&lt;/h3>
+&lt;p>Create a custom stylesheet in the &lt;code>assets/scss/&lt;/code> directory.&lt;/p>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>Hugo offers a powerful and efficient way to build a blog. With sensible configuration, you can set up a professional personal blog that is easy to maintain.&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>Updated on December 23, 2025&lt;/em>&lt;/p></description></item><item><title>My First Blog Post</title><link>https://kshsong.github.io/post/2025/my-first-post/</link><pubDate>Tue, 23 Dec 2025 10:00:00 +0800</pubDate><guid>https://kshsong.github.io/post/2025/my-first-post/</guid><description>&lt;h1 id="my-first-blog-post">My First Blog Post&lt;/h1>
+&lt;p>Welcome to my personal blog! This is the first article on a site built with Hugo.&lt;/p>
+&lt;h2 id="why-hugo">Why Hugo?&lt;/h2>
+&lt;p>Hugo is a static site generator written in Go, with several advantages:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Fast builds&lt;/strong> — Hugo is one of the fastest static site generators available&lt;/li>
+&lt;li>&lt;strong>Easy to use&lt;/strong> — straightforward configuration and a gentle learning curve&lt;/li>
+&lt;li>&lt;strong>Plenty of themes&lt;/strong> — a large selection of high-quality themes&lt;/li>
+&lt;li>&lt;strong>Simple deployment&lt;/strong> — it generates static files that can be hosted on any static hosting service&lt;/li>
+&lt;/ol>
+&lt;h2 id="how-this-blog-was-built">How this blog was built&lt;/h2>
+&lt;p>The steps were:&lt;/p>
+&lt;ol>
+&lt;li>Install Hugo&lt;/li>
+&lt;li>Create a new Hugo site&lt;/li>
+&lt;li>Configure the theme (Hugo Blox Builder)&lt;/li>
+&lt;li>Customize the configuration&lt;/li>
+&lt;li>Create content&lt;/li>
+&lt;/ol>
+&lt;h2 id="whats-next">What&amp;rsquo;s next&lt;/h2>
+&lt;p>I plan to:&lt;/p>
+&lt;ul>
+&lt;li>Share notes from technical learning&lt;/li>
+&lt;li>Record project development experience&lt;/li>
+&lt;li>Discuss research topics&lt;/li>
+&lt;li>Share occasional reflections&lt;/li>
+&lt;/ul>
+&lt;h2 id="closing">Closing&lt;/h2>
+&lt;p>Thanks for reading my first blog post! If you have any questions or suggestions, feel free to get in touch.&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>Published on December 23, 2025&lt;/em>&lt;/p></description></item></channel></rss>
