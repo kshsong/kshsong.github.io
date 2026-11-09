@@ -1,0 +1,223 @@
+/* ==========================================================================
+   宋凯胜个人学术主页 —— 第一版统一版式
+   目标：克制、正式、清晰；统一字体、留白、层级与配色；兼顾桌面与移动端。
+   仅覆盖表现层，不改动主题模板逻辑；深浅两套变量保证配色一致。
+   ========================================================================== */
+
+:root {
+  --ink: #1f2933;
+  --muted: #5b6875;
+  --line: #e2e8ee;
+  --accent: #1f4e79;
+  --surface: #f7f9fb;
+}
+
+html.dark {
+  --ink: #e6edf3;
+  --muted: #aab7c4;
+  --line: #33404d;
+  --accent: #93bddd;
+  --surface: #1b2530;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+    "Source Han Sans SC", sans-serif;
+  color: var(--ink);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- 导航 ---------- */
+header#site-header {
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-link {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.nav-link.active {
+  color: var(--accent);
+}
+
+/* ---------- 区块与标题层级 ---------- */
+section.hbb-section {
+  scroll-margin-top: 4.5rem;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* 短分隔线：唯一的一处装饰，避免花哨 */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 2.25rem;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+/* ---------- 正文 ---------- */
+.prose {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+}
+
+.prose p {
+  margin: 0 0 1.1em;
+}
+
+.prose h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 1.9em 0 0.7em;
+}
+
+.prose h3:first-child {
+  margin-top: 0;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.prose a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.45em;
+  margin: 0 0 1.1em;
+}
+
+.prose li {
+  margin: 0.4em 0;
+  padding-left: 0.15em;
+}
+
+.prose li::marker {
+  color: var(--muted);
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--line);
+  color: var(--muted);
+  font-style: normal;
+}
+
+.prose table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--line);
+  padding: 0.55rem 0.8rem;
+  text-align: left;
+}
+
+.prose th {
+  background: var(--surface);
+  font-weight: 600;
+}
+
+.prose code {
+  font-size: 0.9em;
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+.prose hr {
+  border-color: var(--line);
+}
+
+/* ---------- 人物卡片 ---------- */
+.blox-resume-biography-3 .portrait-title {
+  text-align: center;
+}
+
+.blox-resume-biography-3 .bio-text p {
+  margin-bottom: 1em;
+}
+
+.network-icon a {
+  color: var(--muted);
+}
+
+.network-icon a:hover {
+  color: var(--accent);
+}
+
+.avatar {
+  border: 1px solid var(--line) !important;
+}
+
+/* ---------- 页脚 ---------- */
+footer,
+footer a {
+  color: var(--muted);
+}
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 640px) {
+  section.hbb-section {
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important;
+    scroll-margin-top: 3.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .prose {
+    font-size: 0.97rem;
+    line-height: 1.8;
+  }
+
+  .prose table {
+    font-size: 0.88rem;
+  }
+
+  .blox-resume-biography-3 .resume-biography {
+    gap: 1.5rem;
+  }
+}

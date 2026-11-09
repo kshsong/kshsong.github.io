@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 | 宋凯胜</title><link>https://kshsong.github.io/post/</link><atom:link href="https://kshsong.github.io/post/index.xml" rel="self" type="application/rss+xml"/><description>笔记</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>zh-Hans</language><lastBuildDate>Tue, 23 Dec 2025 14:00:00 +0800</lastBuildDate><image><url>https://kshsong.github.io/media/icon_hu_645fa481986063ef.png</url><title>笔记</title><link>https://kshsong.github.io/post/</link></image><item><title>如何使用 Hugo 搭建个人博客</title><link>https://kshsong.github.io/post/2025/hugo-blog-setup/</link><pubDate>Tue, 23 Dec 2025 14:00:00 +0800</pubDate><guid>https://kshsong.github.io/post/2025/hugo-blog-setup/</guid><description>&lt;h1 id="如何使用-hugo-搭建个人博客">如何使用 Hugo 搭建个人博客&lt;/h1>
+&lt;p>本教程将详细介绍如何使用 Hugo 框架搭建一个现代化的个人博客。&lt;/p>
+&lt;h2 id="前置要求">前置要求&lt;/h2>
+&lt;p>在开始之前，请确保你已经安装了：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;/li>
+&lt;li>
+(版本 0.115.0 或更高)&lt;/li>
+&lt;/ul>
+&lt;h2 id="步骤一创建-hugo-站点">步骤一：创建 Hugo 站点&lt;/h2>
+&lt;p>首先，创建一个新的 Hugo 站点：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new site my-blog
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> my-blog
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="步骤二初始化-git-仓库">步骤二：初始化 Git 仓库&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git init
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;Initial commit&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="步骤三添加主题">步骤三：添加主题&lt;/h2>
+&lt;p>本博客使用 Hugo Blox Builder 的 Academic CV 主题：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 添加主题模块&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo mod init github.com/username/my-blog
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 &lt;code>config/_default/module.yaml&lt;/code> 中配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">imports&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">path&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github.com/HugoBlox/hugo-blox-builder/starters/academic-cv&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="步骤四配置网站">步骤四：配置网站&lt;/h2>
+&lt;p>编辑 &lt;code>config/_default/hugo.yaml&lt;/code>：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">baseURL&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;https://yourusername.github.io&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">languageCode&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;zh-cn&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;你的博客名称&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="步骤五创建内容">步骤五：创建内容&lt;/h2>
+&lt;p>创建第一篇文章：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo new post/my-first-post.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="步骤六本地预览">步骤六：本地预览&lt;/h2>
+&lt;p>启动本地服务器：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">hugo server -D
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>访问 &lt;code>http://localhost:1313&lt;/code> 查看效果。&lt;/p>
+&lt;h2 id="步骤七部署到-github-pages">步骤七：部署到 GitHub Pages&lt;/h2>
+&lt;ol>
+&lt;li>在 GitHub 创建仓库 &lt;code>username.github.io&lt;/code>&lt;/li>
+&lt;li>配置 GitHub Actions 工作流&lt;/li>
+&lt;li>推送代码，自动部署&lt;/li>
+&lt;/ol>
+&lt;h2 id="高级配置">高级配置&lt;/h2>
+&lt;h3 id="启用中文支持">启用中文支持&lt;/h3>
+&lt;p>在 &lt;code>config/_default/hugo.yaml&lt;/code> 中添加：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">hasCJKLanguage&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="自定义样式">自定义样式&lt;/h3>
+&lt;p>在 &lt;code>assets/scss/&lt;/code> 目录下创建自定义样式文件。&lt;/p>
+&lt;h2 id="总结">总结&lt;/h2>
+&lt;p>Hugo 提供了一个强大而高效的博客搭建解决方案。通过合理配置，你可以建立一个专业且易于维护的个人博客。&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>更新于 2025年12月23日&lt;/em>&lt;/p></description></item><item><title>我的第一篇博客</title><link>https://kshsong.github.io/post/2025/my-first-post/</link><pubDate>Tue, 23 Dec 2025 10:00:00 +0800</pubDate><guid>https://kshsong.github.io/post/2025/my-first-post/</guid><description>&lt;h1 id="我的第一篇博客">我的第一篇博客&lt;/h1>
+&lt;p>欢迎来到我的个人博客！这是使用 Hugo 搭建的第一篇文章。&lt;/p>
+&lt;h2 id="为什么选择-hugo">为什么选择 Hugo？&lt;/h2>
+&lt;p>Hugo 是一个基于 Go 语言的静态网站生成器，具有以下优势：&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>极速构建&lt;/strong> - Hugo 是最快的静态网站生成器之一&lt;/li>
+&lt;li>&lt;strong>简单易用&lt;/strong> - 配置简单，上手容易&lt;/li>
+&lt;li>&lt;strong>主题丰富&lt;/strong> - 有大量优秀的主题可选&lt;/li>
+&lt;li>&lt;strong>部署方便&lt;/strong> - 生成静态文件，可以部署到任何静态托管服务&lt;/li>
+&lt;/ol>
+&lt;h2 id="博客搭建过程">博客搭建过程&lt;/h2>
+&lt;p>这个博客的搭建过程包括：&lt;/p>
+&lt;ol>
+&lt;li>安装 Hugo&lt;/li>
+&lt;li>创建新的 Hugo 站点&lt;/li>
+&lt;li>配置主题（使用 Hugo Blox Builder）&lt;/li>
+&lt;li>自定义配置&lt;/li>
+&lt;li>创建内容&lt;/li>
+&lt;/ol>
+&lt;h2 id="未来计划">未来计划&lt;/h2>
+&lt;p>接下来我计划：&lt;/p>
+&lt;ul>
+&lt;li>分享技术学习笔记&lt;/li>
+&lt;li>记录项目开发经验&lt;/li>
+&lt;li>探讨学术研究话题&lt;/li>
+&lt;li>分享生活思考&lt;/li>
+&lt;/ul>
+&lt;h2 id="结语">结语&lt;/h2>
+&lt;p>感谢你阅读我的第一篇博客文章！如果你有任何问题或建议，欢迎留言交流。&lt;/p>
+&lt;hr>
+&lt;p>&lt;em>本文发布于 2025年12月23日&lt;/em>&lt;/p></description></item></channel></rss>
